@@ -22,13 +22,13 @@ header {
 
 .cinzel-decorative-bold {
 	font-family: "Cinzel Decorative", serif;
-	font-weight: 700;
+	font-weight: 500;
 	font-style: normal;
 }
 
 .cinzel-decorative-black {
 	font-family: "Cinzel Decorative", serif;
-	font-weight: 900;
+	font-weight: 600;
 	font-style: normal;
 }
 
@@ -215,11 +215,12 @@ header {
 	text-transform: uppercase;
 	padding: 0 250px;
 	margin-bottom: 15px;
+	font-family: "Adobe Caslon Pro", sans-serif;
 	
 }
 
-.text-p{
-	font-size: 16px;
+.text-p-caslon{
+	font-size: 20px;
 	color: white;
 	padding: 0 250px;
 	margin-bottom: 35px;
