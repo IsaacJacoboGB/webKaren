@@ -28,7 +28,6 @@
 // 		});
 // });
 document.addEventListener('DOMContentLoaded', function () {
-	// Cargar el contenido del header desde header.html
 	fetch('/header.html')
 		.then((response) => response.text())
 		.then((data) => {
