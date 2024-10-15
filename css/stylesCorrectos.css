@@ -10,7 +10,7 @@ header {
 /* body {
 	font-family: "Adobe Caslon Pro", sans-serif;
 } */
-
+ 
 .cinzel-decorative-regular {
 	font-family: "Cinzel Decorative", serif;
 	font-weight: 400;
@@ -29,10 +29,10 @@ header {
 	font-style: normal;
 }
 
-/* Estilos generales para el header */
+/* ----------------------------------------------------Estilos generales para el header -----------------------------------------------*/
 /* Estilos para el contenedor del header */
 .header {
-    background-color: #f4f4f4;
+    background-color: #f4f4f4c9;
     padding: 0; /* Elimina el padding */
     margin: 0; /* Elimina el margin */
     border-bottom: 1px solid #ddd;
@@ -56,6 +56,10 @@ header {
 }
 
 /* Estilos para la barra de navegación a la derecha */
+.navbar {
+    display: flex;
+    justify-content: flex-end;
+}
 .navbar ul {
     list-style: none;
     display: flex;
@@ -64,9 +68,9 @@ header {
     padding: 0;
 }
 
-.navbar ul li {
+/* .navbar ul li {
     display: inline-block;
-}
+} */
 
 .navbar ul li a {
     text-decoration: none;
@@ -95,6 +99,40 @@ header {
     color: #333;
     margin: 0;
 }
+
+.menu-toggle {
+    display: none; /* Oculto por defecto */
+    font-size: 30px;
+    cursor: pointer;
+    color: #333;
+}
+/* Estilos para la barra de navegación en pantallas pequeñas */
+@media (max-width: 768px) {
+    /* Mostrar el ícono de menú hamburguesa en pantallas pequeñas */
+    .menu-toggle {
+        display: block; /* Mostrar el botón toggle */
+    }
+
+    /* Ocultar el menú por defecto en pantallas pequeñas */
+    .navbar ul {
+        display: none; /* Ocultar el menú */
+        flex-direction: column; /* Mostrar elementos en columna */
+        gap: 10px;
+        background-color: #f8f8f8;
+        padding: 10px;
+        position: absolute;
+        top: 60px;
+        right: 10px;
+        border-radius: 8px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Mostrar el menú cuando se active */
+    .navbar ul.active {
+        display: flex; /* Mostrar el menú cuando esté activo */
+    }
+}
+
 
 /*------------------------------------------ Estilos para el contenedor del carrusel------------------ */
 .carousel-container {
@@ -237,7 +275,7 @@ iframe {
     justify-content: center;
     align-items: center;
     text-align: justify;
-    max-width: 800px;
+    max-width: 950px;
     margin: 0 auto;
     padding: 20px;
     line-height: 1.8;
@@ -249,7 +287,7 @@ iframe {
 /*------------------------------------------ Estilos para el contenedor del carrusel coatetelco------------------ */
 .carousel-container2 {
     position: relative;
-    width: 550px;
+    width: 800px;
     height: 400px;
     overflow: hidden;
     margin: 0 auto; /* Centra el contenedor horizontalmente */
@@ -289,7 +327,7 @@ button.next2 {
 /*------------------------------------------ Estilos para el contenedor del carrusel pilas------------------ */
 .carousel-container3 {
     position: relative;
-    width: 550px;
+    width: 800px;
     height: 400px;
     overflow: hidden;
     margin: 0 auto; /* Centra el contenedor horizontalmente */
@@ -329,7 +367,7 @@ button.next3 {
 /*------------------------------------------ Estilos para el contenedor del carrusel olintepec------------------ */
 .carousel-container4 {
     position: relative;
-    width: 550px;
+    width: 800px;
     height: 400px;
     overflow: hidden;
     margin: 0 auto; /* Centra el contenedor horizontalmente */
@@ -369,7 +407,7 @@ button.next4 {
 /*------------------------------------------ Estilos para el contenedor del carrusel Yautepec------------------ */
 .carousel-container5 {
     position: relative;
-    width: 550px;
+    width: 800px;
     height: 400px;
     overflow: hidden;
     margin: 0 auto; /* Centra el contenedor horizontalmente */
@@ -408,13 +446,143 @@ button.next5 {
 
 /* imagen principal zonas */
 .image-principal {
-    width: 100%; /* Ajusta el ancho de la imagen al 100% del contenedor */
-    height: auto; /* Mantiene la proporción de la imagen */
+    width: 600px; /* Ajusta el ancho de la imagen al 100% del contenedor */
+    height: 350px;/* Mantiene la proporción de la imagen */
     border-radius: 10px; /* Bordes redondeados */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra alrededor de la imagen */
     margin: 20px 0; /* Espacio superior e inferior */
     display: block; /* Asegura que la imagen se comporte como un bloque */
-    max-width: 600px; /* Limita el ancho máximo de la imagen */
+    /* max-width: 600px; Limita el ancho máximo de la imagen */
     margin-left: auto; /* Centra la imagen horizontalmente */
     margin-right: auto; /* Centra la imagen horizontalmente */
+}
+
+
+
+
+
+/* -------------------- responsivo principal------------------------------- */
+@media screen and (max-width: 768px) {
+    .carousel-image {
+        height: auto;
+    }
+
+    .morelos-content {
+        padding: 10px;
+    }
+
+    .h2-morelos {
+        font-size: 1.5rem;
+    }
+
+    .text-p-caslon {
+        font-size: 0.9rem;
+    }
+
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-section {
+        flex-basis: 100%;
+        text-align: center;
+    }
+}
+
+/* Para pantallas de tamaño tablet (768px - 1024px) */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    .carousel-image {
+        height: 400px;
+    }
+
+    .h2-morelos {
+        font-size: 1.8rem;
+    }
+
+    .text-p-caslon {
+        font-size: 1rem;
+    }
+}
+
+
+/* ---------------- responsivo coateltelco  -------------------------*/
+@media (min-width: 768px) {
+    .text-section {
+        padding: 40px;
+    }
+
+    .text-section p {
+        font-size: 1.4rem;
+    }
+}
+
+/* Pantallas pequeñas (móviles) */
+@media (max-width: 767px) {
+    .text-section {
+        padding: 15px;
+    }
+
+    .text-section p {
+        font-size: 1rem;
+        line-height: 1.5;
+    }
+
+    .carousel-image2 {
+        height: auto;
+        width: 100%;
+    }
+
+    .prev2, .next2 {
+        padding: 5px;
+        font-size: 1.2rem;
+    }
+
+    iframe {
+        height: 300px;
+    }
+}
+
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+    .header-menu {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .navbar ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .navbar ul li a {
+        font-size: 16px;
+    }
+
+    .titleWelcome h2 {
+        font-size: 24px;
+    }
+}
+
+@media (max-width: 480px) {
+    .header {
+        padding: 10px;
+    }
+
+    .logo {
+        font-size: 20px;
+    }
+
+    .navbar ul {
+        gap: 5px;
+    }
+
+    .navbar ul li a {
+        font-size: 14px;
+    }
+
+    .titleWelcome h2 {
+        font-size: 20px;
+    }
 }
