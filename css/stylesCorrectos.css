@@ -33,10 +33,10 @@ header {
 /* Estilos para el contenedor del header */
 .header {
     background-color: #f4f4f4c9;
-    padding: 0; /* Elimina el padding */
+    padding: 1px 0; /* Elimina el padding */
     margin: 0; /* Elimina el margin */
     border-bottom: 1px solid #ddd;
-    height: 100px;
+    height: 40px;
 }
 
 /* Estilos para el contenedor del menú */
@@ -66,6 +66,7 @@ header {
     gap: 20px;
     margin: 0;
     padding: 0;
+    gap: 15px;
 }
 
 /* .navbar ul li {
@@ -78,6 +79,7 @@ header {
     font-size: 18px;
     font-weight: 500;
     transition: color 0.3s ease;
+    padding: 5px 10px;
 }
 
 /* Estilos para el contenedor del contenido del header */
@@ -96,8 +98,9 @@ header {
 
 .titleWelcome h2 {
     font-size: 30px;
-    color: #333;
+    color: black;
     margin: 0;
+    font-family: "Cinzel Decorative", serif;
 }
 
 .menu-toggle {
@@ -200,6 +203,7 @@ button.prev:hover, button.next:hover {
     font-weight: bold;
     margin-bottom: 20px;
     color: #333;
+    font-family: "Cinzel Decorative", sans-serif;
 }
 
 /* Estilos para el párrafo */
@@ -457,7 +461,14 @@ button.next5 {
     margin-right: auto; /* Centra la imagen horizontalmente */
 }
 
-
+.text-p-caslon{
+	font-size: 16px;
+	color: #555;
+    line-height: 1.6;
+	padding: 0 20px;
+	margin-bottom: 35px;
+	font-family: "Adobe Caslon Pro", sans-serif;
+}
 
 
 
