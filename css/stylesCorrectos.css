@@ -3,6 +3,7 @@
 /* Encabezado */
 @import url('https://fonts.googleapis.com/css2?family=Arima:wght@100..700&family=Cinzel+Decorative:wght@400;700;900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400&display=swap');
 header {
 	font-family: "Cinzel Decorative", sans-serif;
 }
@@ -10,12 +11,16 @@ header {
 /* body {
 	font-family: "Adobe Caslon Pro", sans-serif;
 } */
- 
+
 .cinzel-decorative-regular {
 	font-family: "Cinzel Decorative", serif;
 	font-weight: 400;
 	font-style: normal;
 }
+
+/* .small-caps {
+    font-variant: small-caps;
+} */
 
 .cinzel-decorative-bold {
 	font-family: "Cinzel Decorative", serif;
@@ -32,11 +37,11 @@ header {
 /* ----------------------------------------------------Estilos generales para el header -----------------------------------------------*/
 /* Estilos para el contenedor del header */
 .header {
-    background-color: #f4f4f4c9;
-    padding: 1px 0; /* Elimina el padding */
-    margin: 0; /* Elimina el margin */
+    padding: 1px 0;
+    margin: 0;
+    height: 60px;
+    background-color: #f4f4f4;
     border-bottom: 1px solid #ddd;
-    height: 40px;
 }
 
 /* Estilos para el contenedor del menú */
@@ -48,17 +53,26 @@ header {
 }
 
 /* Estilos para el logo a la izquierda */
-.logo {
-    font-size: 24px;
-    font-weight: bold;
-    color: #333;
-    text-decoration: none;
+
+.logoImg img{
+    
+     width: 35%; 
+    height: 35%;
+    margin-left: 10px;
 }
 
+/* boton de descarga */
+.btnCronica img{
+    width: 250px;
+    height: 100px;
+
+}
 /* Estilos para la barra de navegación a la derecha */
 .navbar {
     display: flex;
     justify-content: flex-end;
+    width: 100%;
+    
 }
 .navbar ul {
     list-style: none;
@@ -69,18 +83,31 @@ header {
     gap: 15px;
 }
 
-/* .navbar ul li {
+.navbar ul li {
     display: inline-block;
-} */
+}
 
 .navbar ul li a {
     text-decoration: none;
-    color: #333;
-    font-size: 18px;
+    color: #ffffff;
+    font-size: 16px;
     font-weight: 500;
     transition: color 0.3s ease;
-    padding: 5px 10px;
+    /* padding: 0px 1px; */
+    width: 900px;
 }
+
+.navbar ul li a:hover {
+    color: #000000;
+}
+
+/* Estilo para el enlace activo */
+.navbar ul li.active, .navbar ul li a.active {
+    color: #Ffff; /* Cambia este color según tus necesidades */
+    font-weight: bold;
+    background-color: #FFE4B5; /* Fondo naranja claro para resaltar */
+}
+
 
 /* Estilos para el contenedor del contenido del header */
 .header-content {
@@ -103,50 +130,19 @@ header {
     font-family: "Cinzel Decorative", serif;
 }
 
-.menu-toggle {
-    display: none; /* Oculto por defecto */
-    font-size: 30px;
-    cursor: pointer;
-    color: #333;
-}
-/* Estilos para la barra de navegación en pantallas pequeñas */
-@media (max-width: 768px) {
-    /* Mostrar el ícono de menú hamburguesa en pantallas pequeñas */
-    .menu-toggle {
-        display: block; /* Mostrar el botón toggle */
-    }
-
-    /* Ocultar el menú por defecto en pantallas pequeñas */
-    .navbar ul {
-        display: none; /* Ocultar el menú */
-        flex-direction: column; /* Mostrar elementos en columna */
-        gap: 10px;
-        background-color: #f8f8f8;
-        padding: 10px;
-        position: absolute;
-        top: 60px;
-        right: 10px;
-        border-radius: 8px;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    }
-
-    /* Mostrar el menú cuando se active */
-    .navbar ul.active {
-        display: flex; /* Mostrar el menú cuando esté activo */
-    }
-}
 
 
 /*------------------------------------------ Estilos para el contenedor del carrusel------------------ */
-.carousel-container {
+/* .carousel-container {
     position: relative;
     max-width: 100%;
     margin: auto;
     overflow: hidden;
 }
+*/
 
 /* Estilos para las imágenes del carrusel */
-.carousel-images {
+/* .carousel-images {
     display: flex;
     transition: transform 0.5s ease-in-out;
 }
@@ -154,6 +150,35 @@ header {
 .carousel-image {
     min-width: 100%;
     height: 500px;
+}  */
+.carousel-container {
+    position: relative;
+    width: 80%; /* Ajusta el ancho del carrusel según tu diseño */
+    max-width: 800px;
+    margin: auto;
+    overflow: hidden;
+    background-color: rgba(255, 244, 241, 0.8); /* Fondo para las áreas vacías */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    aspect-ratio: 16/9; /* Define una proporción para el contenedor */
+}
+
+.carousel-images {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-image {
+    width: auto; /* El ancho será automático para evitar deformaciones */
+    /*height: auto; Ajusta el alto de la imagen al contenedor */
+    max-height: 100%; /* Limita el alto para que no exceda el contenedor */
+    object-fit: contain; /* Asegura que la imagen mantenga sus proporciones */
+    display: none; /* Oculta imágenes no activas */
+}
+
+.carousel-image.active {
+    display: block; /* Solo muestra la imagen activa */
 }
 
 /* Estilos para las flechas de navegación */
@@ -206,14 +231,6 @@ button.prev:hover, button.next:hover {
     font-family: "Cinzel Decorative", sans-serif;
 }
 
-/* Estilos para el párrafo */
-.text-p-caslon {
-    font-size: 18px;
-    line-height: 1.6;
-    color: #555;
-    margin-bottom: 40px;
-    padding: 0 20px;
-}
 
 /* Estilos para centrar el iframe del mapa */
 iframe {
@@ -227,13 +244,14 @@ iframe {
 
 /* ----------------------------------------------Estilos del footer---------------------------------- */
 .footer {
-    background-color: #333;
+    background-color: #606834;
     color: white;
-    padding: 20px 0;
+    /* padding: 20px 0; */
     text-align: center;
     position: relative;
-    bottom: 0;
+
     width: 100%;
+    min-height: 100px;
 }
 
 .footer-container {
@@ -245,18 +263,18 @@ iframe {
 }
 
 .footer-section {
-    margin: 10px 0;
+    margin: 5px 0;
 }
 
 .footer-section h4 {
-    margin-bottom: 10px;
+    margin-bottom: 5px;
     font-size: 18px;
 }
 
 .footer-section p,
 .footer-section a {
     font-size: 16px;
-    margin: 5px 0;
+    margin: 2px 0;
     color: white;
     text-decoration: none;
 }
@@ -266,7 +284,7 @@ iframe {
 }
 
 .copyright {
-    margin-top: 20px;
+    margin-top: 10px;
     font-size: 14px;
     color: #bbb;
 }
@@ -281,12 +299,25 @@ iframe {
     text-align: justify;
     max-width: 950px;
     margin: 0 auto;
-    padding: 20px;
-    line-height: 1.8;
+    padding: 0 20px;
+    line-height: 1.6;
+    font-size: 16px;
 }
 .text-section p {
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
+.text-p-caslon{
+	color: #555;
+	margin-bottom: 35px; 
+	
+}
+.versalitas {
+    font-family: 'Roboto Slab', serif; /* Usa la fuente con versalitas */
+    font-variant: small-caps; /* Aplica versalitas */
+    
+}
+
+
 
 /*------------------------------------------ Estilos para el contenedor del carrusel coatetelco------------------ */
 .carousel-container2 {
@@ -305,7 +336,8 @@ iframe {
 
 .carousel-image2 {
     min-width: 100%;
-    height: auto;
+    height: 100%;
+    /* object-fit: cover; */
 }
 
 button.prev2, button.next2 {
@@ -329,23 +361,67 @@ button.next2 {
 }
 
 /*------------------------------------------ Estilos para el contenedor del carrusel pilas------------------ */
-.carousel-container3 {
+/* .carousel-container3 {
     position: relative;
     width: 800px;
     height: 400px;
     overflow: hidden;
-    margin: 0 auto; /* Centra el contenedor horizontalmente */
+    margin: 0 auto; 
     align-content: center;
 }
 
 .carousel-images3 {
     display: flex;
     transition: transform 0.5s ease-in-out;
+} */
+
+/* .carousel-image3 {
+    min-width: 100%;
+    height: 100%;
+} */
+
+
+/* button.prev3, button.next3 {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0,0,0,0.5);
+    border: none;
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+    padding: 10px;
+}
+
+button.prev3 {
+    left: 0;
+}
+
+button.next3 {
+    right: 0;
+} */
+.carousel-container3 {
+    position: relative;
+    width: 800px; /* Ancho fijo para el contenedor */
+    height: 400px; /* Alto fijo para el contenedor */
+    overflow: hidden;
+    margin: 0 auto; /* Centra el contenedor horizontalmente */
+    display: flex;
+    align-items: center; /* Centra verticalmente las imágenes */
+    justify-content: center; /* Centra horizontalmente las imágenes */
+    background-color: #000; /* Fondo negro para áreas vacías */
+}
+
+.carousel-images3 {
+    display: flex; /* Alinea las imágenes en fila */
+    transition: transform 0.5s ease-in-out;
 }
 
 .carousel-image3 {
-    min-width: 100%;
-    height: auto;
+    max-width: 100%; /* Ajusta al ancho máximo disponible */
+    max-height: 100%; /* Ajusta al alto máximo disponible */
+    object-fit: contain; /* Mantiene la proporción de las imágenes */
+    flex: 0 0 auto; /* Evita que las imágenes se redimensionen automáticamente */
 }
 
 button.prev3, button.next3 {
@@ -456,144 +532,14 @@ button.next5 {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra alrededor de la imagen */
     margin: 20px 0; /* Espacio superior e inferior */
     display: block; /* Asegura que la imagen se comporte como un bloque */
-    /* max-width: 600px; Limita el ancho máximo de la imagen */
+    
     margin-left: auto; /* Centra la imagen horizontalmente */
     margin-right: auto; /* Centra la imagen horizontalmente */
 }
 
-.text-p-caslon{
-	font-size: 16px;
-	color: #555;
-    line-height: 1.6;
-	padding: 0 20px;
-	margin-bottom: 35px;
-	font-family: "Adobe Caslon Pro", sans-serif;
-}
 
 
 
-/* -------------------- responsivo principal------------------------------- */
-@media screen and (max-width: 768px) {
-    .carousel-image {
-        height: auto;
-    }
-
-    .morelos-content {
-        padding: 10px;
-    }
-
-    .h2-morelos {
-        font-size: 1.5rem;
-    }
-
-    .text-p-caslon {
-        font-size: 0.9rem;
-    }
-
-    .footer-container {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .footer-section {
-        flex-basis: 100%;
-        text-align: center;
-    }
-}
-
-/* Para pantallas de tamaño tablet (768px - 1024px) */
-@media screen and (min-width: 769px) and (max-width: 1024px) {
-    .carousel-image {
-        height: 400px;
-    }
-
-    .h2-morelos {
-        font-size: 1.8rem;
-    }
-
-    .text-p-caslon {
-        font-size: 1rem;
-    }
-}
 
 
-/* ---------------- responsivo coateltelco  -------------------------*/
-@media (min-width: 768px) {
-    .text-section {
-        padding: 40px;
-    }
 
-    .text-section p {
-        font-size: 1.4rem;
-    }
-}
-
-/* Pantallas pequeñas (móviles) */
-@media (max-width: 767px) {
-    .text-section {
-        padding: 15px;
-    }
-
-    .text-section p {
-        font-size: 1rem;
-        line-height: 1.5;
-    }
-
-    .carousel-image2 {
-        height: auto;
-        width: 100%;
-    }
-
-    .prev2, .next2 {
-        padding: 5px;
-        font-size: 1.2rem;
-    }
-
-    iframe {
-        height: 300px;
-    }
-}
-
-
-/* Estilos responsivos */
-@media (max-width: 768px) {
-    .header-menu {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .navbar ul {
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    .navbar ul li a {
-        font-size: 16px;
-    }
-
-    .titleWelcome h2 {
-        font-size: 24px;
-    }
-}
-
-@media (max-width: 480px) {
-    .header {
-        padding: 10px;
-    }
-
-    .logo {
-        font-size: 20px;
-    }
-
-    .navbar ul {
-        gap: 5px;
-    }
-
-    .navbar ul li a {
-        font-size: 14px;
-    }
-
-    .titleWelcome h2 {
-        font-size: 20px;
-    }
-}
